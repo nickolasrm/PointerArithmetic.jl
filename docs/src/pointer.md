@@ -2,7 +2,7 @@
 Pointers are basically the same as using the Julia builtin function `pointer(array)`. Instead of adding a new structure, it only adds C like accessing, storing and shifting operations.
 
 !!! note
-    Read the first page before using it
+    Read the PointerArithmetic page before using it
 
 ```@example pointer_main
 using PointerArithmetic #hide

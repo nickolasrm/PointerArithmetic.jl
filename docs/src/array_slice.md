@@ -3,7 +3,7 @@
 ArraySlices are another way to use pointers. Instead of accessing addresses directly, they create another Array pointing to the address at the specified interval of the parent array.
 
 !!! note
-    Read the first page before using it
+    Read the PointerArithmetic page before using it
 
 ```@example array_slice
 using PointerArithmetic #hide

@@ -2,7 +2,6 @@
 This package allows you to manipulate slices and array pointers like in C. It is different than views because this package focuses on performance and at giving the programmer a way to access lower code features. 
 
 !!! warning
-
     Just like in C, it gives you too much power to access invalid memory positions, which may cause a problems to your OS execution or application malfunctioning. Only use this library if you know exactly what you're doing.
 
 !!! warning
