@@ -8,5 +8,5 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/nickolasrm/PointerArithmetic.jl"
+    repo = "github.com/nickolasrm/PointerArithmetic.jl.git"
 )
