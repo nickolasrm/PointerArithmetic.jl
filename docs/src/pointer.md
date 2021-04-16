@@ -17,7 +17,7 @@ ptr[1]
 ```
 
 ## Loading and Storing
-As mentioned earlier, storing and loading are similar to C syntax. Just like in C, you can access unbounded 
+As mentioned earlier, storing and loading are similar to C syntax. Just like in C, you can access unbounded elements.
 ```@example pointer_load_store
 using PointerArithmetic #hide
 a = [1,2,3,4]
@@ -38,7 +38,7 @@ Example of store operation
     Bounds are not problems here
 
 ## Shift
-Shifting a pointer is similar to memory address manipulation. Just like in C, you can now use the shift operator to add or subtract addresses from the base address in the pointer.
+Shifting a pointer is similar to memory address manipulation. You can use the shift operator to add or subtract addresses from the base address in the pointer.
 
 For this operation, there is one shifting 
 operator:

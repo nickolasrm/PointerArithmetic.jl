@@ -7,7 +7,7 @@ a = [1,2,3,4]
 slice = Slice(a, 2:3)
 ```
 
-As you can see, through the use of the pointer inside of `slice` it was able to access the memory directly by its address
+As you can see, through the use of the pointer inside of `slice` it was able to access the memory directly by its address.
 
 ## Loading and Storing
 Since Slices are sort of a SubArray, changing a value inside of it affects the parent array.
@@ -29,7 +29,7 @@ Example of store operation
     Remember, bounds are not problems here
 
 ## Shift
-Since Slices are part of an array, increasing and decreasing its size is the same as moving the pointer, and the length of the array.
+Slices are part of an array, increasing and decreasing its size is the same as moving the pointer, and the length of the array.
 
 For this operation, there are two shifting 
 operators:
