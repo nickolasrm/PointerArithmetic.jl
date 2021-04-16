@@ -8,15 +8,6 @@ struct Slice{T} <: AbstractArray{T, 1}
     size::Tuple{Int}
 end
 
-"""
-    Slice(arr::AbstractArray, interval::UnitRange)
-
-This method returns a Slice structure that stores the array and the slice metadata.
-It accesses the array by using its pointer, which allows you to use out of 
-bounds indices, such as slice[0], slice[-1].
-
-Since it uses a struct, its performance is comparable to views.
-"""
 function Slice(arr::AbstractArray, interval::UnitRange)
     assert_interval(interval)
     length = interval.stop - interval.start + 1
@@ -37,7 +28,7 @@ end
 Shifts the array starting point in a certain number of items.
 Can be called using `<<`
 Usage:
-```julia_repl
+```julia-repl
 julia> arr = [1,2,3,4]
 julia> sl = Slice(arr, 2:3)
 2-element Slice{Int64}:
@@ -72,7 +63,7 @@ Base.:<<(sl::Slice, i::Int) = slice_shift_start(sl, i)
 Shifts the array ending point in a certain number of items.
 Can be called using `>>`
 Usage:
-```julia_repl
+```julia-repl
 julia> arr = [1,2,3,4]
 julia> sl = Slice(arr, 2:3)
 2-element Slice{Int64}:

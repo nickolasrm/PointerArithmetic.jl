@@ -1,8 +1,8 @@
-@testset "PointerSlice" begin
+@testset "Pointer" begin
     a = [1,2,3,4]
-    pt = PointerSlice(a)
+    pt = Pointer(a)
     @test pt[3] == 3
-    pt = PointerSlice(a, 2)
+    pt = Pointer(a, 2)
     @test pt[0] == 2
     @test pt[1] == 3
     pt = pt << 1

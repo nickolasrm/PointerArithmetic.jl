@@ -1,6 +1,6 @@
-@testset "UnsafeSlice" begin
+@testset "ArraySlice" begin
     a = [1,2,3,4]
-    b = UnsafeSlice(a, 2:3)
+    b = ArraySlice(a, 2:3)
     @test b[1] == a[2]
     b[1] = 100
     @test a[2] == 100

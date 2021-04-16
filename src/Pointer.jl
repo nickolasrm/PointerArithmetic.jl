@@ -1,27 +1,27 @@
 """
-    PointerSlice(arr::AbstractArray)
+    Pointer(arr::AbstractArray)
 
 Returns the pointer for the argument array.
 It also includes auxiliar functions for pointer load and store.
 
 Usage
-```julia
+```julia-repl
 julia> a = [1,2,3,4]
-julia> pt = PointerSlice(a)
+julia> pt = Pointer(a)
 julia> pt[3]
 3
 ```
 """
-PointerSlice(arr::AbstractArray) = pointer(arr)
+Pointer(arr::AbstractArray) = pointer(arr)
 
 """
-    PointerSlice(arr::AbstractArray, el_shift::Int)
+    Pointer(arr::AbstractArray, el_shift::Int)
 
-Same as PointerSlice, but shifts the array in el_shift number of
+Same as Pointer, but shifts the array in el_shift number of
 elements.
 """
-PointerSlice(arr::AbstractArray, el_shift::Int) =
-    PointerSlice(arr) << el_shift
+Pointer(arr::AbstractArray, el_shift::Int) =
+    Pointer(arr) << el_shift
 
 @inline Base.getindex(ptr::Ptr, i::Int) = unsafe_load(ptr, i)
 @inline Base.setindex!(ptr::Ptr{T}, val::T, i::Int) where{T} = 
@@ -31,15 +31,15 @@ PointerSlice(arr::AbstractArray, el_shift::Int) =
     ptr_shift_start(ptr::Ptr, i::Int)
 
 Shifts the pointer in the specified i number of elements.
-Another way to call is to use `array << nof_elements`
+Another way to call is to use `ptr << nof_elements`
 Usage:
-```julia_repl
+```julia-repl
 julia> a = [1,2,3,4]
-julia> pt = PointerSlice(a)
+julia> pt = Pointer(a)
 julia> pt[1]
 1
-julia> pt << 2
-julia> pt[3]
+julia> pt = pt << 2
+julia> pt[1]
 3
 ```
 """
