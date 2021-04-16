@@ -75,6 +75,4 @@ julia> sl[-1]
 1
 ```
 
-> Check out more information at its documentation
-
-Docs: 
+> Check out more information at its documentation: https://nickolasrm.github.io/PointerArithmetic.jl/dev
