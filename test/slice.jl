@@ -12,10 +12,13 @@
     @test b[4] == a[4]
     b[4] = 10000
     @test a[4] == 10000
-    try
-        b = Slice(a, 3:2)
-        @test 1 == 0
-    catch
-        @test 1 == 1
-    end
+
+    @test_broken Slice(a, 3:2)
+    @test_broken Slice(a, 0:4)
+    @test_broken Slice(a, 1:5)
+    b = Slice(a, 2:3)
+    @test_broken b << -2
+    @test_broken b << 2
+    @test_broken b >> 2
+    @test_broken b >> -2
 end

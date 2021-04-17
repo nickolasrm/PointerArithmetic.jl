@@ -26,9 +26,9 @@ Symbol | Description
  `>>` | If positive, increases the length of the array, showing new elements after the current last. Otherwise, it hides the n last shown elements.
 
 ```@docs
-array_slice_shift_start(::Slice, ::Int)
+shift_start(::AbstractArray, ::Integer)
 ```
 
 ```@docs
-array_slice_shift_end(::Slice, ::Int)
+shift_end(::AbstractArray, ::Integer)
 ```

@@ -7,6 +7,6 @@ makedocs(
     modules = [PointerArithmetic]
 )
 
-#deploydocs(
-#    repo = "github.com/nickolasrm/PointerArithmetic.jl.git"
-#)
+deploydocs(
+    repo = "github.com/nickolasrm/PointerArithmetic.jl.git"
+)

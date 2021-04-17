@@ -9,6 +9,9 @@ slice = Slice(a, 2:3)
 
 As you can see, through the use of the pointer inside of `slice` it was able to access the memory directly by its address.
 
+!!! note
+    Slices are the only subarray-like method that has bounds checking, which makes them safe.
+
 ## Loading and Storing
 Since Slices are sort of a SubArray, changing a value inside of it affects the parent array.
 ```@example slice_load_store
@@ -40,9 +43,9 @@ Symbol | Description
  `>>` | If positive, increases the length of the array, showing new elements after the current last. Otherwise, it hides the n last shown elements.
 
 ```@docs
-slice_shift_start(::Slice, ::Int)
+shift_start(::Slice, ::Integer)
 ```
 
 ```@docs
-slice_shift_end(::Slice, ::Int)
+shift_end(::Slice, ::Integer)
 ```

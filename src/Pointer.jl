@@ -1,52 +1,60 @@
-"""
-    Pointer(arr::AbstractArray)
+module Pointers
 
-Returns the pointer for the argument array.
-It also includes auxiliar functions for pointer load and store.
+    using ..Misc
 
-Usage
-```julia-repl
-julia> a = [1,2,3,4]
-julia> pt = Pointer(a)
-julia> pt[3]
-3
-```
-"""
-Pointer(arr::AbstractArray) = pointer(arr)
+    export Pointer, shift_start
 
-"""
-    Pointer(arr::AbstractArray, el_shift::Int)
+    """
+        Pointer(arr::AbstractArray)
 
-Same as Pointer, but shifts the array in el_shift number of
-elements.
-"""
-Pointer(arr::AbstractArray, el_shift::Int) =
-    Pointer(arr) << el_shift
+    Returns the pointer for the argument array.
+    It also includes auxiliar functions for pointer load and store.
 
-@inline Base.getindex(ptr::Ptr, i::Int) = unsafe_load(ptr, i)
-@inline Base.setindex!(ptr::Ptr{T}, val::T, i::Int) where{T} = 
-    unsafe_store!(ptr, val, i)
+    Usage
+    ```julia-repl
+    julia> a = [1,2,3,4]
+    julia> pt = Pointer(a)
+    julia> pt[3]
+    3
+    ```
+    """
+    Pointer(arr::AbstractArray) = pointer(arr)
 
-"""
-    ptr_shift_start(ptr::Ptr, i::Int)
+    """
+        Pointer(arr::AbstractArray, el_shift::Integer)
 
-Shifts the pointer in the specified i number of elements.
-Another way to call is to use `ptr << nof_elements`
-Usage:
-```julia-repl
-julia> a = [1,2,3,4]
-julia> pt = Pointer(a)
-julia> pt[1]
-1
-julia> pt = pt << 2
-julia> pt[1]
-3
-```
-"""
-@inline ptr_shift_start(ptr::Ptr{T}, i::Int) where {T} = ptr + sizeof(T) * i
-"""
-    >>(sl::Ptr{T}, i::Int)
+    Same as Pointer, but shifts the array in el_shift number of
+    elements.
+    """
+    Pointer(arr::AbstractArray, el_shift::Integer) =
+        Pointer(arr) << el_shift
 
-Same as ptr_shift_start.
-"""
-Base.:<<(ptr::Ptr{T}, i::Int) where {T} = ptr_shift_start(ptr, i)
+    @inline Base.getindex(ptr::Ptr, i::Integer) = unsafe_load(ptr, i)
+    @inline Base.setindex!(ptr::Ptr{T}, val::T, i::Integer) where{T} = 
+        unsafe_store!(ptr, val, i)
+
+    """
+        shift_start(ptr::Ptr, i::Integer)
+
+    Shifts the pointer in the specified i number of elements.
+    Another way to call is to use `ptr << nof_elements`
+    Usage:
+    ```julia-repl
+    julia> a = [1,2,3,4]
+    julia> pt = Pointer(a)
+    julia> pt[1]
+    1
+    julia> pt = pt << 2
+    julia> pt[1]
+    3
+    ```
+    """
+    @inline shift_start(ptr::Ptr{T}, i::Integer) where {T} = ptr + sizeof(T) * i
+    """
+        >>(sl::Ptr{T}, i::Integer)
+
+    Same as shift_start.
+    """
+    Base.:<<(ptr::Ptr{T}, i::Integer) where {T} = shift_start(ptr, i)
+
+end

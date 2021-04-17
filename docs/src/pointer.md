@@ -48,5 +48,5 @@ Symbol | Description
  `<<` | If positive, hides n elements at the beginning of the vector. Otherwise, it shows hidden elements there.
 
 ```@docs
-ptr_shift_start(::Ptr, ::Int)
+shift_start(::Ptr, ::Integer)
 ```
