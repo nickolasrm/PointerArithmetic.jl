@@ -1,6 +1,6 @@
 # PointerArithmetic.jl
-[![codecov](https://codecov.io/gh/nickolasrm/PointerArithmetic.jl/branch/main/graph/badge.svg?token=dgE8k5nuTh)](https://codecov.io/gh/nickolasrm/PointerArithmetic.jl)
 [![Build Status](https://travis-ci.com/nickolasrm/PointerArithmetic.jl.svg?branch=main)](https://travis-ci.com/nickolasrm/PointerArithmetic.jl)
+[![Coverage Status](https://coveralls.io/repos/github/nickolasrm/PointerArithmetic.jl/badge.svg?branch=develop)](https://coveralls.io/github/nickolasrm/PointerArithmetic.jl?branch=develop)
 
 This package allows you to manipulate slices and array pointers like in C. It is different than views because this package focuses on performance and at giving the programmer a way to access lower code features. 
 
