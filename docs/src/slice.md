@@ -58,12 +58,12 @@ a = [1,2,3,4]
 b = Slice(a, 2:3)
 ```
 ```@example slice_of_slice
-c = Slice(a, 1:3)
+c = Slice(b, 1:3)
 ```
 
 !!! note
     It doesn't affect performance
-    
+
 
 !!! note
     It is also not bounded to the slice, but to the parent array
