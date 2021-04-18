@@ -12,9 +12,7 @@ notifications:
   email: false
 
 codecov: true
-
-after_success:
-  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())';
+coveralls: true
 
 jobs:
   include:
