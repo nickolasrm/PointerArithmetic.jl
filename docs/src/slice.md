@@ -49,3 +49,21 @@ shift_start(::Slice, ::Integer)
 ```@docs
 shift_end(::Slice, ::Integer)
 ```
+## Slices of slices
+Another feature related to slices is the Slice of Slice feature. By calling Slice, passing the Slice instead of an Array, you can take fractions of the parent array, by using the slice relative indices.
+
+```@example slice_of_slice
+using PointerArithmetic #hide
+a = [1,2,3,4]
+b = Slice(a, 2:3)
+```
+```@example slice_of_slice
+c = Slice(a, 1:3)
+```
+
+!!! note
+    It doesn't affect performance
+    
+
+!!! note
+    It is also not bounded to the slice, but to the parent array
