@@ -9,13 +9,13 @@ module Slices
         parent::AbstractArray
         pointer::Ptr{T}
 
-        start::Integer
-        stop::Integer
+        start::Int
+        stop::Int
 
-        start_bound::Integer
-        stop_bound::Integer
+        start_bound::Int
+        stop_bound::Int
 
-        length::Integer
+        length::Int
         size::Tuple{Int}
     end
 
