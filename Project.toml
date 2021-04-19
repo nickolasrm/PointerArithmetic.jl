@@ -1,7 +1,7 @@
 name = "PointerArithmetic"
 uuid = "c94a8726-515c-4ee5-9c02-6a0d0dc456e9"
 authors = ["nickolasrm <nickolasrochamachado@gmail.com>"]
-version = "0.4.2"
+version = "1.0.0"
 
 [deps]
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
