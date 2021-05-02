@@ -5,6 +5,10 @@ os:
   - linux
   - windows
 
+branches:
+  - master
+  - working
+
 julia:
   - 1.6
 
